@@ -88,7 +88,7 @@ function moveSnake() {
 			localStorage.setItem("topScore", JSON.stringify(score))		
 			local_score = localStorage.getItem("topScore") || 0
 			let topScore = local_score;
-			top_score.textContent = topScore	
+			top_score.textContent = topScore
 		}
 		
 		return clearInterval(intervalId);
