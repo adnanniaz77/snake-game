@@ -95,5 +95,74 @@ body {
     background: transparent;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("./images/apple.png") !important;
+    background-image: url("../images/apple.png") !important;
 }
+
+.shake {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding: 2em 0;
+    font-weight: bold;
+}
+
+#score,
+label {
+    font-size: 1.3rem;
+}
+
+#top-score {
+    margin-left: 1em;
+}
+
+label,
+#top-score {
+    font-family: karma arcade;
+    font-size: 1.3rem;
+}
+
+@keyframes shake {
+    0% {
+    }
+    10% {
+    }
+    20% {
+        transform: translate(-16px, 0px) rotate(12deg);
+    }
+    30% {
+        transform: translate(16px, 14px) rotate(0deg);
+    }
+    40% {
+    }
+    50% {
+    }
+    60% {
+    }
+    70% {
+    }
+    80% {
+    }
+    90% {
+    }
+    100% {
+    }
+}
+
+/* .snake-head {
+    border-radius: 0 20px 20px 0;
+    background-image: url("./images/snake-head.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+}
+
+.tail {
+    background-image: url("./images/tail.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */

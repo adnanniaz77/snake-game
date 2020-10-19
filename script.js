@@ -5,15 +5,53 @@ const collision_sound = document.querySelector('#collision_sound');
 const scoreText = document.querySelector('#score')
 const board_size = 100;
 let squares = [];
+let direction = 1;
 const width = 10;
 let score = 0;
 let gameSpeed = 500;
+let intervalId;
 
 // initial Snake
 let currentSnake = [1,0];
 
 // show beginning score "0"
 scoreText.textContent = score;
+
+// START THE GAME with "start-button"
+startButton.addEventListener('click', (e) => {
+	resetGame();
+
+	// create grid-board 
+	createBoard();
+
+	for (let i = 0; i < currentSnake.length; i++) {
+		squares[i].classList.add('snake')
+	}
+
+	// create random apple
+	generateApple();
+
+	// move snake
+	intervalId = setInterval(moveSnake, gameSpeed);
+
+	// Keyboard Event to handle direction controls
+	function control(e) {
+		if (e.key === "ArrowRight") {
+			direction = 1;
+		} else if (e.key === "ArrowUp") {
+			direction = -width;
+		} else if (e.key === "ArrowLeft") {
+			direction = -1;
+		} else if(e.key === "ArrowDown") { 
+			direction = +width;
+		}
+
+	}
+
+	document.addEventListener('keydown', control);
+});
+
+
 
 ////////////////////////////////////////////////////
 // ***** FUNCTIONS *****//
@@ -80,4 +118,19 @@ function generateApple() {
 		const randNum = Math.floor(Math.random() * (board_size - currentSnake.length) + currentSnake.length);
 		squares[randNum].classList.add('apple')
 	} while (currentSnake.length > squares.length)
+}
+
+// reset game 
+function resetGame() {
+	squares = [];
+	direction = 1;
+	gameSpeed = 500;
+	currentSnake = [1,0];
+
+	score = 0;
+	scoreText.textContent = score;
+
+	clearInterval(intervalId);
+
+	board.innerHTML = "";
 }
