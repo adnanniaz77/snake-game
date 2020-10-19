@@ -53,9 +53,7 @@ startButton.addEventListener('click', (e) => {
 
 
 
-////////////////////////////////////////////////////
-// ***** FUNCTIONS *****//
-////////////////////////////////////////////////////
+// *************** FUNCTIONS *************** //
 
 // function	create grid-board
 function createBoard() {
@@ -115,7 +113,8 @@ function moveSnake() {
 // generate apple
 function generateApple() {
 	do {
-		const randNum = Math.floor(Math.random() * (board_size - currentSnake.length) + currentSnake.length);
+        const randNum = Math.floor(Math.random() * 
+            (board_size - currentSnake.length) + currentSnake.length);
 		squares[randNum].classList.add('apple')
 	} while (currentSnake.length > squares.length)
 }
