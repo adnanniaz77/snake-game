@@ -55,19 +55,19 @@ body {
     font-weight: bold;
     cursor: pointer;
     border: none;
-    background: #daee77;
-    background: -moz-linear-gradient(left, #daee77 0%, #75890c 100%);
+    background: #e6f1af;
+    background: -moz-linear-gradient(left, #e6f1af 0%, #a8b94f 100%);
     background: -webkit-gradient(
         left top,
         right top,
-        color-stop(0%, #daee77),
-        color-stop(100%, #75890c)
+        color-stop(0%, #e6f1af),
+        color-stop(100%, #a8b94f)
     );
-    background: -webkit-linear-gradient(left, #daee77 0%, #75890c 100%);
-    background: -o-linear-gradient(left, #daee77 0%, #75890c 100%);
-    background: -ms-linear-gradient(left, #daee77 0%, #75890c 100%);
-    background: linear-gradient(to right, #daee77 0%, #75890c 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#daee77', endColorstr='#75890c', GradientType=1 );
+    background: -webkit-linear-gradient(left, #e6f1af 0%, #a8b94f 100%);
+    background: -o-linear-gradient(left, #e6f1af 0%, #a8b94f 100%);
+    background: -ms-linear-gradient(left, #e6f1af 0%, #a8b94f 100%);
+    background: linear-gradient(to right, #e6f1af 0%, #a8b94f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f1af', endColorstr='#75890c', GradientType=1 );
 }
 
 #start-button:hover,
@@ -153,7 +153,7 @@ label,
     }
 }
 
-/* .snake-head {
+.snake-head {
     border-radius: 0 20px 20px 0;
     background-image: url("./images/snake-head.png") !important;
     background-repeat: no-repeat;
@@ -165,4 +165,4 @@ label,
     background-image: url("./images/tail.png") !important;
     background-repeat: no-repeat;
     background-size: cover;
-} */
+}

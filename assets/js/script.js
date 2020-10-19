@@ -1,4 +1,5 @@
 const board = document.querySelector('.board')
+const top_score = document.querySelector('#top-score')
 const startButton = document.querySelector('#start-button')
 const eating_sound = document.querySelector('#eating_sound');
 const collision_sound = document.querySelector('#collision_sound');
@@ -7,9 +8,16 @@ const board_size = 100;
 let squares = [];
 let direction = 1;
 const width = 10;
+
+let local_score = localStorage.getItem("topScore") || 0
 let score = 0;
+
 let gameSpeed = 500;
 let intervalId;
+
+// local storage
+let topScore = local_score;
+top_score.textContent = topScore
 
 // initial Snake
 let currentSnake = [1,0];
@@ -51,8 +59,6 @@ startButton.addEventListener('click', (e) => {
 	document.addEventListener('keydown', control);
 });
 
-
-
 // *************** FUNCTIONS *************** //
 
 // function	create grid-board
@@ -76,6 +82,15 @@ function moveSnake() {
     ) {
 		currentSnake.forEach((sqr) => squares[sqr].classList.add("shake"));
 		collision_sound.play();
+		score = getTotalScore();
+
+		if (score > topScore) {
+			localStorage.setItem("topScore", JSON.stringify(score))		
+			local_score = localStorage.getItem("topScore") || 0
+			let topScore = local_score;
+			top_score.textContent = topScore	
+		}
+		
 		return clearInterval(intervalId);
     }
 
@@ -132,4 +147,9 @@ function resetGame() {
 	clearInterval(intervalId);
 
 	board.innerHTML = "";
+}
+
+// get total score
+function getTotalScore() {
+	return score;
 }
