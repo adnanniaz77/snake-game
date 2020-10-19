@@ -1,5 +1,5 @@
 # SNAKE GAME
-play the Game https://adnanniaz77.github.io/snake-game/
+play the [GAME](https://adnanniaz77.github.io/snake-game/)
 
 ## Game Logic
 #### This snake game is in pure javascript with HTML and CSS. In this snake game a player can play game by pressing the start button. The snake begins with initial stage and grows as the player devour the apple while avoiding hitting the walls and itself.
