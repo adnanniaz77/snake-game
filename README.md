@@ -2,7 +2,7 @@
 
 ![Image of Snake Game](./assets/images/snakegame.png)
 
-play the [GAME](https://adnanniaz77.github.io/snake-game/)
+play the [GAME](https://sanixstudio.github.io/snake-game/)
 
 ## Game Logic
 
